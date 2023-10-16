@@ -1,5 +1,5 @@
 # POD
-A "Pod" is the smallest deployable unit, and it represents a single instance of a running process in a cluster. A Pod can contain one or more containers that share the same network namespace, storage, and configuration.
+A "Pod" is the smallest deployable and scalabale unit, and it represents a single instance of a running process in a cluster. A Pod can contain one or more containers that share the same network namespace, storage, and configuration.
 
 ### Get the information about Pod:
 ```bash
