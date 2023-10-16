@@ -12,12 +12,12 @@ $ kubectl explain pod.spec
 $ kubectl create -f pod.yml
 ```
 
-### Check the log of a container(If there is only a single container in a Pod)
+### Check the log of a container (If there is only a single container in a Pod)
 ```bash
 $ kubectl logs <pod_name>
 ```
 
-### Check the logs if there are multiple containers in a Pod
+### Check the logs of a container (If there are multiple containers in a Pod)
 ```bash
 $ kubectl logs <pod_name> -c <container_name>
 ```
