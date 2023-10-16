@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kubia-liveness-initial-delay
+spec:
+  containers:
+  - image: vinayaksingoriya/kubia-unhealthy-intial-delay
+    name: kubia
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 8080
+      initialDelaySeconds: 15
