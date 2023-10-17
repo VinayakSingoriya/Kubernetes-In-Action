@@ -20,3 +20,9 @@ $ kubectl get ds
 ``` 
 
 **Note**: The shorthand for *DaemonSet* is *ds*.
+
+**Point to remember**:
+- ReplicationControllers and ReplicaSets schedule pods to random cluster nodes,
+whereas DaemonSets make sure every node runs a single instance of a pod
+defined in the DaemonSet.
+ Pods that perform a batch task s
