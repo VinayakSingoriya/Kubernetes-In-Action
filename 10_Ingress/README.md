@@ -1,7 +1,13 @@
 # Kubernetes: Ingress Resource
 Kubernetes ingress is a powerful tool for managing external access to your Kubernetes services. It acts as a layer between your services and the outside world, providing load balancing, SSL termination, and routing based on your defined rules.
 
+*Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the Ingress resource.*
+
 Although the ingress is just another way of exposing services outside the cluster, it is not itself considered a service type. It is a separate API object type.
+
+An Ingress does not expose arbitrary ports or protocols. Exposing services other than HTTP and HTTPS to the internet typically uses a service of type Service.Type=NodePort or Service.Type=LoadBalancer.
+
+
 
 ## Understand why Ingress are needed
 - Each LoadBalancer service requires its own load balancer with its own public IP address, whereas an Ingress only requires one, even when providing access to dozens of services. When a client sends an HTTP request to the Ingress, the host and path in the request determine which service the request is forwarded to.
