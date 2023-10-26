@@ -33,7 +33,7 @@ $ minikube service <service-name> [-n <namespace>].
 **Note**:
 
 - If you only point your clients to the specific node, when that specific node fails, your clients can’t access the service anymore. That’s why it makes sense to put a load balancer in front of the nodes to make sure you’re spreading requests across all healthy nodes and never sending them to a node that’s offline at that moment.
-
+- But if you only point your clients to the first node, when that node fails, your clients can’t access the service anymore. That’s why it makes sense to put a load balancer in front of the nodes to make sure you’re spreading requests across all healthy nodes and never sending them to a node that’s offline at that moment.
 
 ## Usecase
 Use this Service type when you want to expose your application on a specific port on each worker node in the cluster, making it accessible to external connections (coming from outside the cluster). NodePort Services are often used for development and testing purposes.
