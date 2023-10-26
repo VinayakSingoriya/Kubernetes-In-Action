@@ -9,6 +9,8 @@ Note that a NodePort Service builds on top of the ClusterIP Service type. What t
 
 By creating a NodePort service, you make Kubernetes reserve a port on all its nodes (the same port number is used across all of them) and forward incoming connections to the pods that are part of the service.
 
+A connection received on port <NodePort> of the first node might be forwarded either to the pod running on the first node or to one of the pods running on the other nodes.
+
 You can contact the NodePort Service, from outside the cluster, by requesting
 **\<NodeIP>:\<NodePort>** (anyone who has access to the node) or **\<ClusterIP>:\<Port>** (within cluster)
 
@@ -32,7 +34,6 @@ $ minikube service <service-name> [-n <namespace>].
 
 - If you only point your clients to the specific node, when that specific node fails, your clients can’t access the service anymore. That’s why it makes sense to put a load balancer in front of the nodes to make sure you’re spreading requests across all healthy nodes and never sending them to a node that’s offline at that moment.
 
-- One disadvantage of the NodePort Service is that it doesn't do any kind of load balancing across multiple nodes. It simply directs traffic to whichever node the client connected to. This can create a problem: Some nodes can get overwhelmed with requests while others sit idle.
 
 ## Usecase
 Use this Service type when you want to expose your application on a specific port on each worker node in the cluster, making it accessible to external connections (coming from outside the cluster). NodePort Services are often used for development and testing purposes.
