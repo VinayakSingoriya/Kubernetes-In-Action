@@ -54,7 +54,7 @@ Developers focus on creating features and improving user experience, while opera
 
 Kubernetes simplifies this by abstracting hardware and providing a unified platform for deploying and running apps. This allows developers to deploy apps without assistance and lets operations teams focus on infrastructure maintenance without needing deep knowledge of the applications.
 
-## Understanding what container are
+## Understanding what containers are
 
 When you have different software pieces on one computer needing different setups or versions, it's a hassle to manage them all separately. You can give each one its own virtual machine, but that's wasteful and time-consuming. As the number of software pieces grows, it becomes impractical to give each its own virtual machine. This wastes both hardware and the time of the people managing the system.
 
