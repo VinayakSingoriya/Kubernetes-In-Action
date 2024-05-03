@@ -113,7 +113,7 @@ Linux containers are similar to virtual machines but lighter. Now, let's see how
 
 Apps A and B have access to the same files whether they're in a VM or separate Docker containers. Each Docker container has its own isolated filesystem, so how can they share files?
 
-Docker images are made of layers. Different images can have the same layers, as every Docker image is built on top of another. This makes image distribution faster because shared layers don't need to be transferred again. Also, layers help reduce image storage space. Each layer is stored only once, so if two containers share the same base layers, they can read the same files. However, changes made by one container don't affect the other because container image layers are read-only. When a container runs, a new writable layer is created on top of the image layers. If a process writes to a file in the underlying layers, a copy is made in the top layer, and the process writes to the copy.
+Docker images are made of layers. Different images can have the same layers, as every Docker image is built on top of another. This makes image distribution faster because shared layers don't need to be transferred again. Also, layers help reduce image storage space. Each layer is stored only once, so if two containers share the same base layers, they can read the same files. However, changes made by one container don't affect the other because container image layers are `read-only`. When a container runs, a new writable layer is created on top of the image layers. If a process writes to a file in the underlying layers, a copy is made in the top layer, and the process writes to the copy.
 
 ## Portability limitations of Container Images
 
